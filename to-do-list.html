@@ -20,27 +20,16 @@
     <form class="form-inline d-flex flex-column justify-content-center">
         <label class="sr-only text-center" for="inlineFormInputName2">New To-Do</label>
         <input type="text" class="form-control mb-2 mr-sm-2 to-do-entry w-75 mx-auto" id="inlineFormInputName2" placeholder="some thing that needs to be done">
-        <button type="submit" class="btn submit text-white mb-2 w-50 mx-auto">Submit</button>
+        <button type="submit" class="btn submit text-white mb-2 w-50 mx-auto" onclick="renderToDo()">Submit</button>
     </form>
 </div>
 <hr>
 
 <div class="container">
 <!--    THIS IS WHERE THE TODOs WILL RENDER-->
-    <div class="row text-center">
+    <div class="row text-center" id="to-do-row">
 
-        <div class="col-xxl">
-            This is text
-        </div>
-        <div class="col-xxl">
-            This is text
-        </div>
-        <div class="col-xxl">
-            This is text
-        </div>
-        <div class="col-xl">
-            This is text
-        </div>
+
     </div>
 </div>
 
