@@ -15,7 +15,11 @@ let toDos = function () {
 
 // THESE TWO FUNCTIONS CREATE THE HTML FOR THE COLUMNS
 function createHTML(toDo) {
+    if(toDo.status === "done"){
+    return '<div class= "col-12 col-lg-8 d-flex justify-content-between mx-auto g-3 item"><div class="text done"><h2 class="title">' + toDo.title + '</h2></div><button class="delete">delete</button></div>';
+} else {
     return '<div class= "col-12 col-lg-8 d-flex justify-content-between mx-auto g-3 item"><div class="text"><h2 class="title">' + toDo.title + '</h2></div><button class="delete">delete</button></div>';
+    }
 }
 
 
@@ -41,7 +45,7 @@ function addToDo() {
 
 // CLEARS TO-DOs FROM LOCAL STORAGE
 function clearAll() {
-    window.localStorage.clear();
+    window.localStorage.removeItem("toDos");
     location.reload();
 }
 

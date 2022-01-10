@@ -23,7 +23,7 @@ body {
     text-decoration: line-through;
 }
 
-#place{
+#place {
     position: absolute;
     z-index: -1;
     margin-left: auto;
@@ -33,4 +33,5 @@ body {
     right: 0;
     text-align: center;
 }
+
 
