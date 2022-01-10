@@ -1,4 +1,4 @@
-*{
+* {
     font-family: 'Nanum Pen Script', cursive;
 }
 
@@ -19,10 +19,18 @@ body {
     margin: 0;
 }
 
-.done{
+.done {
     text-decoration: line-through;
 }
 
-@media (min-width: 768px) {
-
+#place{
+    position: absolute;
+    z-index: -1;
+    margin-left: auto;
+    margin-right: auto;
+    top: 408px;
+    left: 0;
+    right: 0;
+    text-align: center;
 }
+

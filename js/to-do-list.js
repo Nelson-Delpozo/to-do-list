@@ -5,17 +5,13 @@ newTitle.focus();
 let toDos = function () {
     if (window.localStorage.getItem("toDos") === null) {
         return [
-            {title: "No To-Dos"}
+            // {title: "No To-Dos"}
         ]
     } else {
         return JSON.parse(window.localStorage.getItem("toDos"));
     }
 }();
 
-// let toDos = [
-//     {title: 'fix fridge'},
-//     {title: 'wash sheets'}
-// ]
 
 // THESE TWO FUNCTIONS CREATE THE HTML FOR THE COLUMNS
 function createHTML(toDo) {
@@ -31,8 +27,6 @@ function createColumns(toDos) {
     return html;
 }
 
-// THIS IS TO ADD A TO-DO
-// let newTitle = document.querySelector('#inlineFormInputName2');
 
 function addToDo() {
     let newToDo = {};
@@ -49,10 +43,6 @@ function addToDo() {
 function clearAll() {
     window.localStorage.clear();
     location.reload();
-}
-
-function markDone() {
-    let done = document.getElementsByClassName('item');
 }
 
 
@@ -79,9 +69,14 @@ let doneItems = document.getElementsByClassName("item");
 for (let j = 0; j < doneItems.length; j++) {
     doneItems[j].addEventListener('click', function (e) {
         let doneItem = e.target.closest('div.item').children[0];
-        console.log(doneItem)
+        // console.log(doneItem)
         doneItem.classList.toggle('done');
-
+        for (let m = 0; m < toDos.length; m++) {
+            if (doneItem.children[0].textContent === toDos[m].title) {
+                toDos[m].status = "done";
+            }
+        }
+        window.localStorage.setItem("toDos", JSON.stringify(toDos));
     })
 }
 
@@ -95,7 +90,8 @@ function deleteItem(item) {
 
             console.log(toDos);
         }
-    }window.localStorage.setItem("toDos", JSON.stringify(toDos));
+    }
+    window.localStorage.setItem("toDos", JSON.stringify(toDos));
 }
 
 
