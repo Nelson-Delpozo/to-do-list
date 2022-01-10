@@ -19,6 +19,10 @@ body {
     margin: 0;
 }
 
+.done{
+    text-decoration: line-through;
+}
+
 @media (min-width: 768px) {
 
 }
