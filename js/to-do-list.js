@@ -3,9 +3,9 @@ let newTitle = document.querySelector('#inlineFormInputName2');
 newTitle.focus();
 
 let toDos = function () {
-    if (window.localStorage.getItem("toDos") === null) {
+    if (window.localStorage.getItem("toDos") === null || window.localStorage.getItem("toDos") === '[]') {
         return [
-            // {title: "No To-Dos"}
+            {title: "No To-Dos"}
         ]
     } else {
         return JSON.parse(window.localStorage.getItem("toDos"));
@@ -15,10 +15,10 @@ let toDos = function () {
 
 // THESE TWO FUNCTIONS CREATE THE HTML FOR THE COLUMNS
 function createHTML(toDo) {
-    if(toDo.status === "done"){
-    return '<div class= "col-12 col-lg-8 d-flex justify-content-between mx-auto g-3 item"><div class="text done"><h2 class="title">' + toDo.title + '</h2></div><button class="delete">delete</button></div>';
-} else {
-    return '<div class= "col-12 col-lg-8 d-flex justify-content-between mx-auto g-3 item"><div class="text"><h2 class="title">' + toDo.title + '</h2></div><button class="delete">delete</button></div>';
+    if (toDo.status === "done") {
+        return '<div class= "col-12 col-lg-8 d-flex justify-content-between mx-auto g-3 item"><div class="text done"><h2 class="title">' + toDo.title + '</h2></div><button class="delete">delete</button></div>';
+    } else {
+        return '<div class= "col-12 col-lg-8 d-flex justify-content-between mx-auto g-3 item"><div class="text"><h2 class="title">' + toDo.title + '</h2></div><button class="delete">delete</button></div>';
     }
 }
 
@@ -38,6 +38,7 @@ function addToDo() {
     console.log(newToDo);
     toDos.push(newToDo);
     console.log(toDos);
+    toDos = toDos.filter(toDo => toDo.title !== "No To-Dos");
     window.localStorage.setItem('toDos', JSON.stringify(toDos));
     location.reload();
 
@@ -91,11 +92,13 @@ function deleteItem(item) {
         if (item === toDos[i].title) {
             console.log(i);
             toDos = toDos.filter(toDo => toDo.title !== item);
-
+            toDos = toDos.filter(toDo => toDo.title !== "No To-Dos");
             console.log(toDos);
         }
     }
+    location.reload();
     window.localStorage.setItem("toDos", JSON.stringify(toDos));
+
 }
 
 

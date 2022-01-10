@@ -23,15 +23,5 @@ body {
     text-decoration: line-through;
 }
 
-#place {
-    position: absolute;
-    z-index: -1;
-    margin-left: auto;
-    margin-right: auto;
-    top: 408px;
-    left: 0;
-    right: 0;
-    text-align: center;
-}
 
 
