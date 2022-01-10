@@ -8,5 +8,13 @@ body {
 
 .item {
     background-color: #f59ca9;
+    border: 3px solid #542344;
+}
+
+.item h2 {
+    margin: 0;
+}
+
+@media (min-width: 768px) {
 
 }
