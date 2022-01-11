@@ -102,8 +102,9 @@ function deleteItem(item) {
             console.log(toDos);
         }
     }
-    location.reload();
     window.localStorage.setItem("toDos", JSON.stringify(toDos));
+    location.reload();
+
 
 }
 
