@@ -70,7 +70,7 @@ for (let i = 0; i < readyToDelete.length; i++) {
         e.target.closest('div.item').remove();
         let index = e.target.closest('div.item').children[0].children[0];
         // console.log(typeof (index.innerHTML.toLowerCase()));
-        let itemTitle = index.innerHTML.toLowerCase();
+        let itemTitle = index.innerHTML;
         deleteItem(itemTitle);
     })
 }
