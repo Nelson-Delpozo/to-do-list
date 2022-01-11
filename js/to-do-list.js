@@ -5,8 +5,10 @@ newTitle.focus();
 let toDos = function () {
     if (window.localStorage.getItem("toDos") === null || window.localStorage.getItem("toDos") === '[]') {
         return [
-            {title: "No To-Dos",
-            status: "no-delete"}
+            {
+                title: "no to-dos",
+                status: "no-delete"
+            }
         ]
     } else {
         return JSON.parse(window.localStorage.getItem("toDos"));
@@ -17,7 +19,7 @@ let toDos = function () {
 // THESE TWO FUNCTIONS CREATE THE HTML FOR THE COLUMNS
 function createHTML(toDo) {
 
-    if(toDo.status === "no-delete"){
+    if (toDo.status === "no-delete") {
         return '<div class= "col-12 col-lg-8 d-flex justify-content-between mx-auto g-3 item"><div class="text"><h2 class="title">' + toDo.title + '</h2></div></div>'
     } else if (toDo.status === "done") {
         return '<div class= "col-12 col-lg-8 d-flex justify-content-between mx-auto g-3 item"><div class="text done"><h2 class="title">' + toDo.title + '</h2></div><button class="delete">delete</button></div>';
@@ -42,7 +44,7 @@ function addToDo() {
     console.log(newToDo);
     toDos.push(newToDo);
     console.log(toDos);
-    toDos = toDos.filter(toDo => toDo.title !== "No To-Dos");
+    toDos = toDos.filter(toDo => toDo.title !== "no to-dos");
     window.localStorage.setItem('toDos', JSON.stringify(toDos));
     location.reload();
 
