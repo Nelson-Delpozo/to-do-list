@@ -2,10 +2,7 @@
 
 
 let status = window.localStorage.getItem('darkMode');
-
-window.onload = function(){
-    console.log(status);
-}
+console.log(status);
 
 
 // DARK MODE
