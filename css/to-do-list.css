@@ -8,7 +8,12 @@ body {
 
 
 .submit {
-    background-color: #542344
+    background-color: #542344;
+    color: white;
+}
+
+.submit-dark{
+    color: #f59ca9;
 }
 
 .item {

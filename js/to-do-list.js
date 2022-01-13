@@ -1,7 +1,11 @@
 "use strict";
 
+
+// DARK MODE
+
 let darkMode = document.getElementById('slider').checked;
 let itemsText = document.getElementsByClassName('item');
+let buttons = document.getElementsByClassName('submit');
 console.log(darkMode);
 function darkModeCheck() {
     if (darkMode === false) {
@@ -12,19 +16,21 @@ function darkModeCheck() {
         for( let i = 0; i < itemsText.length; i++){
             itemsText[i].style.color = 'black'
         }
+        for( let p = 0; p < buttons.length; p++){
+            buttons[p].classList.toggle('submit-dark');
+        }
 
     }else{
         darkMode = false;
         document.getElementById('body').style.backgroundColor =  '#bfd1e5';
         document.getElementById('body').style.color =  'revert';
-
-
-
+        for( let p = 0; p < buttons.length; p++){
+            buttons[p].classList.toggle('submit-dark');
+        }
     }
-
 }
 
-
+// THIS RETURNS EITHER THE TO-DOs FROM LOCAL STORAGE, OR THE PLACEHOLDER 'NO TODOs'
 
 let newTitle = document.querySelector('#inlineFormInputName2');
 newTitle.focus();
