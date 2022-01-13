@@ -1,6 +1,13 @@
 "use strict";
 
 
+let status = window.localStorage.getItem('darkMode');
+
+window.onload = function(){
+    console.log(status);
+}
+
+
 // DARK MODE
 
 let darkMode = document.getElementById('slider').checked;
@@ -18,15 +25,16 @@ function darkModeCheck() {
         }
         for( let p = 0; p < buttons.length; p++){
             buttons[p].classList.toggle('submit-dark');
-        }
+        }window.localStorage.setItem("darkMode", 'true');
 
     }else{
         darkMode = false;
+        console.log(darkMode);
         document.getElementById('body').style.backgroundColor =  '#bfd1e5';
         document.getElementById('body').style.color =  'revert';
         for( let p = 0; p < buttons.length; p++){
             buttons[p].classList.toggle('submit-dark');
-        }
+        }window.localStorage.setItem('darkMode', 'false');
     }
 }
 
