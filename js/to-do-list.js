@@ -1,4 +1,31 @@
 "use strict";
+
+let darkMode = document.getElementById('slider').checked;
+let itemsText = document.getElementsByClassName('item');
+console.log(darkMode);
+function darkModeCheck() {
+    if (darkMode === false) {
+        darkMode = true;
+        console.log(darkMode);
+        document.getElementById('body').style.backgroundColor =  '#05668d';
+        document.getElementById('body').style.color =  '#f59ca9';
+        for( let i = 0; i < itemsText.length; i++){
+            itemsText[i].style.color = 'black'
+        }
+
+    }else{
+        darkMode = false;
+        document.getElementById('body').style.backgroundColor =  '#bfd1e5';
+        document.getElementById('body').style.color =  'revert';
+
+
+
+    }
+
+}
+
+
+
 let newTitle = document.querySelector('#inlineFormInputName2');
 newTitle.focus();
 

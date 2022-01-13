@@ -6,6 +6,7 @@ body {
     background-color: #bfd1e5;
 }
 
+
 .submit {
     background-color: #542344
 }
@@ -28,7 +29,7 @@ footer {
     text-align: center;
 }
 
-#slider{
+#slider-box{
     display: flex;
     justify-content: right;
     align-items: center;
