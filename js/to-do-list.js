@@ -1,37 +1,37 @@
 "use strict";
 
-
-let status = window.localStorage.getItem('darkMode');
-console.log(status);
-
-
 // DARK MODE
 
 let darkMode = document.getElementById('slider').checked;
+let memoryDarkMode = window.localStorage.getItem('darkMode');
+console.log(memoryDarkMode);//this is a string
 let itemsText = document.getElementsByClassName('item');
 let buttons = document.getElementsByClassName('submit');
-console.log(darkMode);
+console.log(darkMode);//this is a boolean
+
 function darkModeCheck() {
     if (darkMode === false) {
         darkMode = true;
         console.log(darkMode);
-        document.getElementById('body').style.backgroundColor =  '#05668d';
-        document.getElementById('body').style.color =  '#f59ca9';
-        for( let i = 0; i < itemsText.length; i++){
+        document.getElementById('body').style.backgroundColor = '#05668d';
+        document.getElementById('body').style.color = '#f59ca9';
+        for (let i = 0; i < itemsText.length; i++) {
             itemsText[i].style.color = 'black'
         }
-        for( let p = 0; p < buttons.length; p++){
+        for (let p = 0; p < buttons.length; p++) {
             buttons[p].classList.toggle('submit-dark');
-        }window.localStorage.setItem("darkMode", 'true');
+        }
+        window.localStorage.setItem("darkMode", 'true');
 
-    }else{
+    } else {
         darkMode = false;
         console.log(darkMode);
-        document.getElementById('body').style.backgroundColor =  '#bfd1e5';
-        document.getElementById('body').style.color =  'revert';
-        for( let p = 0; p < buttons.length; p++){
+        document.getElementById('body').style.backgroundColor = '#bfd1e5';
+        document.getElementById('body').style.color = 'revert';
+        for (let p = 0; p < buttons.length; p++) {
             buttons[p].classList.toggle('submit-dark');
-        }window.localStorage.setItem('darkMode', 'false');
+        }
+        window.localStorage.setItem('darkMode', 'false');
     }
 }
 

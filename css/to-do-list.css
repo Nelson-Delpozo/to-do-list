@@ -12,7 +12,7 @@ body {
     color: white;
 }
 
-.submit-dark{
+.submit-dark {
     color: #f59ca9;
 }
 
@@ -34,13 +34,13 @@ footer {
     text-align: center;
 }
 
-#slider-box{
+#slider-box {
     display: flex;
     justify-content: right;
     align-items: center;
 }
 
-#slider-box p{
+#slider-box p {
     margin: 0 5px 0 0;
 }
 
